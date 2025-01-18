@@ -23,18 +23,18 @@ class _SeparatorState extends State<Separator> {
     super.initState();
 
     _info = widget.info;
-    _controller =
-        SeparatorController(widget.info.index, widget.info.parentController);
+    _controller = SeparatorController(widget.info.index, widget.info.parentController);
   }
 
   @override
   Widget build(BuildContext context) => GestureDetector(
         child: MouseRegion(
-          cursor: _info.isHorizontalSeparator
-              ? SystemMouseCursors.resizeRow
-              : SystemMouseCursors.resizeColumn,
+          cursor: _info.isHorizontalSeparator ? SystemMouseCursors.resizeRow : SystemMouseCursors.resizeColumn,
           child: SizedBox(
-            child: Container(color: _info.color),
+            child: Container(
+              color: _info.color,
+              child: _info.child,
+            ),
             width: _info.isHorizontalSeparator ? double.infinity : _info.size,
             height: _info.isHorizontalSeparator ? _info.size : double.infinity,
           ),

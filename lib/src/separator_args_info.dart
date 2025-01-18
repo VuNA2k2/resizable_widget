@@ -14,14 +14,16 @@ class SeparatorArgsBasicInfo {
   final bool isDisabledSmartHide;
   final double size;
   final Color color;
+  final Widget? child;
 
   const SeparatorArgsBasicInfo(this.index, this.isHorizontalSeparator,
-      this.isDisabledSmartHide, this.size, this.color);
+      this.isDisabledSmartHide, this.size, this.color, this.child);
 
   SeparatorArgsBasicInfo.clone(SeparatorArgsBasicInfo info)
       : index = info.index,
         isHorizontalSeparator = info.isHorizontalSeparator,
         isDisabledSmartHide = info.isDisabledSmartHide,
         size = info.size,
-        color = info.color;
+        color = info.color,
+        child = info.child;
 }

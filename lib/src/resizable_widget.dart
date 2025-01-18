@@ -48,10 +48,17 @@ class ResizableWidget extends StatefulWidget {
   /// Note that [onResized] is called every frame when resizing [children].
   final OnResizedFunc? onResized;
 
+  /// Divider widget.
+  /// This widget is inserted between the children.
+  /// If you set this value, the length of [children] will be doubled.
+  /// The [divider] will be inserted between the original [children].
+  final Widget? divider;
+
   /// Creates [ResizableWidget].
   ResizableWidget({
     Key? key,
     required this.children,
+    this.divider,
     this.percentages,
     @Deprecated('Use [isHorizontalSeparator] instead')
         this.isColumnChildren = false,
